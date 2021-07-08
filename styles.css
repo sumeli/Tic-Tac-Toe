@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Itim', cursive;
+}
+
+body{
+    background-color: #b1e97a;
+}
+
+/* SELECTOR SECTION */
+
+.selectbox{
+    position: absolute;
+    background-color: #e1eed4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 25px 25px;
+    border-radius: 5px;
+    max-width: 330px;
+    width: 100%;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.selectbox.hide{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.selectbox header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(190, 180, 180);
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.options{
+    display: flex;
+    width: 100%;
+}
+
+.options button{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    background-color: #b1e97a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.playerX{
+    margin-right: 10px;
+}
+
+.playerO{
+    margin-left: 10px;
+}
+
+.playerX:hover,
+.playerO:hover {
+    background-color: #487719 ;
+    transform: scale(0.96);
+}
+
+
+/* PLAY BOARD SECTION */
+
+.playboard{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.playboard.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.playboard .details{
+    background-color: #e1eed4;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.playboard .details .players{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+}
+
+.playboard .details span{
+    width: 100%;
+    color: #569715;
+    border-radius: 5px;
+    padding: 7px 0;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: default;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.details span:first-child{
+    color:  #fff;
+}
+
+.details span.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: #569715;
+    border-radius: 5px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.players.active span:first-child{
+    color:#569715;
+}
+
+.players.active span:nth-child(2){
+    color: #fff;
+}
+
+.players.active .slider{
+    left: 50%;
+}
+
+.playboard .play-area{
+    margin-top: 20px;
+}
+
+.playboard section{
+    display: flex;
+}
+
+.playboard section span{
+    display: block;
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+    border-radius: 5px;
+    background-color: #e1eed4;
+    color: #569715;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+}
+
+/* RESULT BOX SECTION */
+
+.resultbox{
+    position: absolute;
+    background-color: #e1eed4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 350px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.resultbox.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.resultbox .won-text{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.resultbox .btn{
+   display: flex;
+   margin-top: 20px;
+   justify-content: center;
+}
+
+.resultbox .btn button:hover{
+    background-color: #487719 ;
+    transform: scale(0.96);
+}
+
+.resultbox .btn button{
+    width: 50%;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    background-color: #8ece4f;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
